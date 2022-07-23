@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.showfragment.ShowFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:nestedScrollingEnabled="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_background_show"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:alpha="0.5"
+                    android:contentDescription="@string/shows_image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_not_found" />
+
+                <TextView
+                    android:id="@+id/tv_show_name"
+                    style="@style/Theme.TvMazeApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignStart="@id/iv_background_show"
+                    android:layout_alignTop="@id/iv_background_show"
+                    android:layout_alignEnd="@id/iv_background_show"
+                    android:layout_marginHorizontal="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    tools:text="The Office" />
+
+                <LinearLayout
+                    android:id="@+id/ll_other_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/iv_background_show"
+                    android:layout_alignBottom="@id/iv_background_show"
+                    android:layout_margin="10dp"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_days"
+                        style="@style/Theme.TvMazeApp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        tools:text="Days:" />
+
+                    <TextView
+                        android:id="@+id/tv_genres"
+                        style="@style/Theme.TvMazeApp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        tools:text="Genres:" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_summary_show"
+                style="@style/Theme.TvMazeApp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/summary"
+                android:textSize="16sp"
+                tools:text="Summary:" />
+
+            <TextView
+                android:id="@+id/season_title"
+                style="@style/Theme.TvMazeApp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/seasons"
+                android:textSize="20sp" />
+
+            <com.ellerbach.tvmazeapp.util.NonScrollExpandableListView
+                android:id="@+id/expandable_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listfooter="@layout/list_episodes"
+                tools:listheader="@layout/list_seasons" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
